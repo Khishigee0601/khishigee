@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    width: 900px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    background-color: yellow;
+    color: #121111;
+    text-align: center;
+    padding: 10px 0;
+}
+
+header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+nav a {
+    color: black;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px;
+}
+
+nav a:hover {
+    color:#;black
+    text-decoration: underline;
+}
+
+aside {
+    background-color: #f7f7f7;
+    padding: 10px;
+    float: left;
+    width: 25%;
+}
+
+aside form {
+    margin-bottom: 20px;
+}
+
+aside nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+aside nav ul li {
+    margin: 5px 0;
+}
+
+aside nav ul li a {
+    text-decoration: none;
+    color: #3b5998;
+}
+
+aside nav ul li a:hover {
+    color: #555;
+    text-decoration: underline;
+}
+
+
+section#picture {
+    width: 250px;
+    text-align: center;
+    border: 1px solid #cccccc;
+    margin-right: 20px;
+    float: left;
+}
+
+
+
+section#picture footer nav a {
+    display: block;
+    margin: 5px 0;
+    color: #3b5998;
+}
+
+
+section  h2 {
+    padding: 10px 0;
+    font-size: 24px;
+    margin: 0;
+    color: #3b5998
+}
+
+section#info a:hover {
+    color: #555;
+}
+section::after, article::after {
+    content: "";
+    display: table;
+    clear: both;
+}
