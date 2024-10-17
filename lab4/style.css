@@ -1,0 +1,64 @@
+
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    width: 210mm;
+    height: 200mm;
+    background-color: white;
+    
+}
+
+.sidebar {
+    width: 30%;
+    background-color: #1A3E79;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar img {
+    width: 150px;
+    height: 200px;
+    display: block;
+    margin: 0 auto 40px;
+}
+
+.sidebar h1 {
+    font-size: 20px;
+    border-bottom: 1px solid #fff;
+}
+.sidebar p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+.main {
+    width: 70%;
+    padding: 20px;
+}
+
+.main h1 {
+    font-size: 28px;
+    color: #1A3E79;
+}
+
+
+.main h2 {
+    font-size: 18px;
+    color: #1A3E79;
+    margin-top: 20px;
+}
+
+.main p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
