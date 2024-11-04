@@ -1,8 +1,220 @@
- .Head {background-color:#1B1b6c}
-header {color:white;
-     background-color: #13124f;
+
+
+    body {
+        font-family: Arial, sans-serif;
     }
-    .h1 {
+.mosttop{
+    padding: 5px;
+    background-color: #1B1b6c;
+    color: #fff;
+    align-items: center;
+    display: flex;
+}
+.mosttop img{
+    filter: brightness(0) invert(1);
+    height: 2em;}
+.header{
+    background: #13124f;
+    color: #fff;
+    padding: 50px; }
+.learnmore {
+        display: inline-block;
+        background-color: #f61067;
+        padding: 12px 24px;
+}
+ .h1 {
         font-size: 40px;
-        border-bottom: 1px solid #fff;
     }
+
+ .content-leftside{
+        position: relative;
+        width: 61%;
+        padding-left: 30px;
+        margin-right: 20px;
+        float: left;
+ }
+.content-leftside h2{
+            padding-top: 50px;
+            font-size: 30px;
+ }
+ .whoa {
+    background-color: #9090a5;
+    color: #fff;
+    width: 100%;
+    height: 30px; 
+    padding: 0 10px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.whoa i {
+    margin-right: 15px;
+}
+
+ .content-rightside{
+    float: right;
+    width: 30%;
+    display: grid;
+    place-items: center;
+    margin-right: 30px;
+    display: block;
+ }
+ 
+.messages {
+    background-color: #f61067;
+    color: #fff;
+    width: 100%;
+    height: 30px; 
+    padding: 0 10px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 1px;
+}
+
+.messages i {
+    margin-right: 10px;
+}
+
+.messages .count {
+    background-color: #352ba5;
+    color: #fff;
+    border-radius: 50%;
+    width: 18px;
+    height: 15px;
+    font-size: 10px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.Welcome {
+    background-color: #9090a5;
+    color: #fff;
+    width: 100%;
+    height: 40px; 
+    padding: 0 10px; 
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    margin-top: 1px;
+    margin: 0; 
+}
+.main-content{
+    background-color: #13124f;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    margin-top: 0;
+}
+.greet{
+    background-color:#1B1b6c;
+    width: 100%;
+    margin-top: 10px;
+    border-left: 2px;
+    border-right: 7px;
+    border-color: #9090a5;
+    color: #fff;
+    font-size: 14px; }
+.Send {
+    display: inline-block;
+    background-color: #f61067;
+    height: 30px;
+    padding: 0 10px;
+    font-size: 15px;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content-footer{
+    background-color: #352ba5;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    margin-top: 0;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+
+}
+.bottom-content{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #9090a5;
+    margin-top: 20px;
+    padding: 0 10px;
+    width:100%;
+    height: 120px;
+}
+.cool {
+    display: inline-block;
+    background-color: #f61067;
+    color: #fff;
+    padding: 6px 80px;
+    margin-right: 20px;
+}
+.lame {
+    display: inline-block;
+    color: #2AD392;
+    padding: 5px 80px;
+    border: 2px solid #2AD392;
+}
+.progress {
+    background-color: white;
+    padding: 2rem;
+    border-bottom: 2px solid #f3f3f3;
+    }
+    .vote {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .progress-bar {
+        width: 100%; 
+        height: 8px;
+        appearance: none;
+    }
+    
+    .progress-bar::-webkit-progress-bar {
+        background-color: #2AD392; /* Background color for empty bar */
+    }
+    
+    .progress-bar[value="68"]::-webkit-progress-value {
+        background-color: #f61067; /* Green for 68% or similar high values */
+    }
+    .page-footer{
+        position:relative;
+        width: 100%;
+        background-color: #1B1b6c;
+        color: #fff;
+        align-items: center;
+        font-size: 10px;
+        display: flex;
+        padding: 0 10px;
+        height: 30px;
+        margin-top: 20px;
+    }
+    @media only screen and (max-width:480px){
+        #slider-image {max-width: 100%;}
+        #flash-ad {display-none;}
+        }
+  @media only screen and (min-width:481px)and (min-width:768px){
+            #slider-image {max-width: 100%;}
+            #flash-ad {display-none;}
+            }
+   @media only screen and (min-width:769px){
+                #slider-image {max-width: 100%;}
+                #flash-ad {display-none;}
+                }        
+    
