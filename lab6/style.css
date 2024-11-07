@@ -1,0 +1,71 @@
+.mosttop{
+    background-color: #4CE4D9;
+    padding: 2px;
+}
+.header {
+    padding: 20px;
+}
+nav {
+    display: flex;
+    gap: 1cm; 
+}
+.contact i {
+    margin-right: 10px;
+}
+.name {
+    font-size: 8mm ;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    flex-grow: 1;
+    gap: 1cm;  
+}
+.calendar i {
+    margin-right: 10px;
+}
+.Choice {
+    display: flex;
+    justify-content: center; 
+    gap: 70px; 
+    font-family: 'Calibri';
+}
+.Choice a {
+    text-decoration: none;
+ color: #333;
+}
+
+.Choice a:hover {
+    color: black; 
+    border-bottom: 2px solid #4CE4D9; 
+    font-weight: bold;
+}
+
+
+.Image-text {
+    position: relative;
+    display: inline-block;
+}
+
+.text{
+    position: absolute;
+    top: 30%; 
+    left: 55%; 
+    color: white; 
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+        font-family: "Calibri", sans-serif;
+    
+}
+.Contact-time{
+    display: flex;
+    justify-content: space-between;
+    font-family: "Calibri", sans-serif;
+}
+    .timetable {
+        margin-right: 9cm}
+    
+
+    .Contact{
+    margin-left: 7cm}
+    
+
