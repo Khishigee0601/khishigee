@@ -163,6 +163,7 @@
     width: 45%; 
     text-align: center;
     margin-right: 5%; 
+    box-sizing: border-box;
 }
 
 .lame {
@@ -172,7 +173,7 @@
     width: 45%; 
     text-align: center;
     border: 2px solid #2AD392;
-    
+    box-sizing: border-box;
 }
 
 .progress {
@@ -223,5 +224,12 @@
    @media only screen and (min-width:769px){
                 #slider-image {max-width: 100%;}
                 #flash-ad {display-none;}
-                }        
-    
+                }     
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .content-leftside, .content-rightside {
+        flex: 1 1 100%; 
+        margin: 0; 
+    }
+}
+
