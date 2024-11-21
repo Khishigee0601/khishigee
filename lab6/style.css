@@ -86,7 +86,7 @@ nav {
 
     }
 .photo div {
-        text-align: center;      /* Зураг болон текстийг төвд байрлуулна */}
+        text-align: center;    }
 
 .photo p {
         font-weight: bold;
@@ -100,10 +100,10 @@ nav {
     justify-content: center;
     }     
 .picture img {
-        display: block;          /* Зураг болон текстийг босоо эгнээнд байрлуулна */
-        margin: 0 auto;          /* Зургийг төвд байрлуулна */
-        width: 500px;            /* Зургийн өргөнийг тохируулна */
-        height: 630px;           /* Зургийн өндрийг тохируулна */
+        display: block;          
+        margin: 0 auto;          
+        width: 500px;         
+        height: 630px;      
 
     } 
 .picture div {
@@ -119,6 +119,10 @@ nav {
         border-bottom: 2px solid #4CE4D9; 
         font-weight: bold;
     }
+ .Questions{
+    padding: 50px;
+    
+} 
  .zuraas{
         background-color: #4CE4D9;
         padding: 1px 5px;
@@ -127,6 +131,22 @@ nav {
         background-color: rgb(48, 47, 47);
         padding: 0.1px;
     }  
-    
-    
-
+.asuult {
+    margin-top: 30px;
+    margin-bottom:30px ;
+}
+.Vieww {
+    text-align: center; 
+}
+.view {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: white;
+    border: 1px solid black; 
+    cursor: pointer;
+    margin: 20px auto;
+    }
+    .zuraas2{
+        background-color: #4CE4D9;
+        padding: 4px;
+    }  
