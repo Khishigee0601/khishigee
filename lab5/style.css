@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lato&display=swap');
 
-
-    body {
+body {
         font-family: Arial, sans-serif;
+        position: relative;
     }
 .mosttop{
     padding: 5px;
@@ -16,7 +17,8 @@
 .header{
     background: #13124f;
     color: #fff;
-    padding: 50px; }
+    padding: 50px; 
+    height: auto;}
 .learnmore {
         display: inline-block;
         background-color: #f61067;
@@ -53,6 +55,11 @@
 .whoa i {
     margin-right: 15px;
 }
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+} 
 
  .content-rightside{
     float: right;
@@ -213,17 +220,14 @@
         height: 30px;
         margin-top: 20px;
     }
-    @media only screen and (max-width:480px){
-        #slider-image {max-width: 100%;}
-        #flash-ad {display-none;}
-        }
+
   @media only screen and (min-width:481px)and (min-width:768px){
             #slider-image {max-width: 100%;}
-            #flash-ad {display-none;}
+            #flash-ad {display: none;}
             }
    @media only screen and (min-width:769px){
                 #slider-image {max-width: 100%;}
-                #flash-ad {display-none;}
+                #flash-ad {display:none;}
                 }     
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -232,4 +236,19 @@
         margin: 0; 
     }
 }
+@media screen and (max-width:520px){
+    .content-leftside{
+        float: none;
+        width: 95%;
+        float:none;
+        margin: 0 ;
+       
+        
+    }    .content-rightside{
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+}
+    
 

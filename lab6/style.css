@@ -1,3 +1,4 @@
+body{    font-family: 'Calibri', sans-serif;}
 .mosttop{
     background-color: #4CE4D9;
     padding: 2px;
@@ -61,11 +62,71 @@ nav {
     justify-content: space-between;
     font-family: "Calibri", sans-serif;
 }
-    .timetable {
+.timetable {
         margin-right: 9cm}
     
-
-    .Contact{
+.Contact{
     margin-left: 7cm}
+.Assist h1 {
+        text-align: center; 
+        font-size: 30px;
+
+    }
+.photo {
+        display: flex;           
+        gap: 10px;              
+        align-items: center;     
+        justify-content: center; 
+    }
+.photo img {
+        display: block;          
+        margin: 0 auto;       
+        width: 220px;          
+        height: 220px;           
+
+    }
+.photo div {
+        text-align: center;      /* Зураг болон текстийг төвд байрлуулна */}
+
+.photo p {
+        font-weight: bold;
+        margin-top: 5px;
+        font-size: 14px;
+    } 
+.picture {
+    display: flex;   
+    gap: 2cm ;                     
+    align-items: center;     
+    justify-content: center;
+    }     
+.picture img {
+        display: block;          /* Зураг болон текстийг босоо эгнээнд байрлуулна */
+        margin: 0 auto;          /* Зургийг төвд байрлуулна */
+        width: 500px;            /* Зургийн өргөнийг тохируулна */
+        height: 630px;           /* Зургийн өндрийг тохируулна */
+
+    } 
+.picture div {
+        text-align: center;      }
+
+.picture p {
+        font-weight: bold;
+        margin-top: 5px;
+        font-size: 14px;
+    }    
+.zrg p a:hover {
+        color: black; 
+        border-bottom: 2px solid #4CE4D9; 
+        font-weight: bold;
+    }
+ .zuraas{
+        background-color: #4CE4D9;
+        padding: 1px 5px;
+    }  
+.zuraas1{
+        background-color: rgb(48, 47, 47);
+        padding: 0.1px;
+    }  
+    
     
 
