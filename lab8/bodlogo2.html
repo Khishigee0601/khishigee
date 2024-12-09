@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <script>
+        // Хоёр тооны ХЕХ (хамгийн их ерөнхий хуваагч)-ийг олох функц
+        function findGCD(a, b) {
+            while (b != 0) {
+                let temp = b;
+                b = a % b;
+                a = temp;
+            }
+            return a; // ХЕХ-г буцаана
+        }
+
+        // Хоёр тооны ХБЕХ (хамгийн бага ерөнхий хуваагч)-ийг олох функц
+        function findLCM(a, b) {
+            return (a * b) / findGCD(a, b); // ХЕХ-ийн үр дүнг ашиглана
+        }
+
+        // Массивийн бүх тооны ХБЕХ-ийг олох функц
+        function findLCMOfArray(arr) {
+            let result = arr[0];
+            for (let i = 1; i < arr.length; i++) {
+                result = findLCM(result, arr[i]);
+            }
+            return result;
+        }
+
+        // Өгөгдсөн Array-гийн тоонууд
+        let numbers = [12, 15, 20, 30, 50]; // Та энд өөрийн хүссэн тоонуудыг оруулж болно
+
+        // ХБЕХ олох
+        let lcm = findLCM

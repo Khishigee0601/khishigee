@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хүсэснээ асуу</title>
+</head>
+<body>
+    <h1>Та хүсэлээ бодоод дараах товчыг дар</h1>
+    <button onclick="getYesNoGif()">Дарна уу</button>
+    <p id="result"></p>
+    <img id="gif" src=""  style="max-width: 500px; display: block; margin-top: 20px; ">
+
+    <script>
+        async function getYesNoGif() {
+            const url = "https://yesno.wtf/api"; 
+
+            try {
+                const response = await fetch(url); 
+                if (!response.ok) {
+                    throw new Error(`Response status: ${response.status}`);
+                }
+
+                const data = await response.json(); 
+                document.getElementById('gif').src = data.image; 
+            } catch (error) {
+                console.error('Алдаа гарлаа:', error.message);
+                document.getElementById('result').textContent = 'Алдаа гарлаа.';
+            }
+        }
+    </script>
+</body>
+</html>

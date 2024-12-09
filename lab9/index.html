@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game">
+        <h1>Hangman тоглоом</h1>
+        <p id="question"></p>
+        <div id="word-display"></div>
+        <canvas id="hangmanCanvas" width="200" height="300"></canvas>
+        <div id="alphabet"></div>
+        <p id="message"></p>
+        <button id="restart">Дахин эхлүүлэх</button>
+    </div>
+    <script>
+   const questions = [
+   { question: "Монгол гэрийн цонх", answer: "тооно" },
+    { question: "Дэлхийн хамгийн урт мөрөн", answer: "Нил" },
+    { question: "Албан ёсны нийслэлгүй цорын ганц улс", answer: "Науру" },
+    { question: "Алтан ургийн хамгийн сүүлийн хаан", answer: "Лигдэн" }
+];
+
+const maxLives = 5;
+let selectedQuestion, selectedAnswer, lives, guessedLetters, displayedWord, score;
+
+const questionEl = document.getElementById("question");
+const wordDisplayEl = document.getElementById("word-display");
+const alphabetEl = document.getElementById("alphabet");
+const scoreEl = document.getElementById("score");
+const messageEl = document.getElementById("message");
+const restartBtn = document.getElementById("restart");
+
+const canvas = document.getElementById('hangmanCanvas');
+const ctx = canvas.getContext('2d');
+
+function startGame() {
+    const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
+    selectedQuestion = randomQuestion.question;
+    selectedAnswer = randomQuestion.answer.toLowerCase();
+
+    lives = maxLives;
+    guessedLetters = [];
+    displayedWord = "_".repeat(selectedAnswer.length).split("");
+    score = 5;
+
+    updateDisplay();
+    questionEl.textContent = selectedQuestion;
+    alphabetEl.innerHTML = "а, б, в, г, д, е, ё, ж, з, и, к, л, м, н, о, п, р, с, т, у, ф, х, ц, ч, ш, ү, э, ю, я".split(", ").map(letter => 
+        `<button onclick="guessLetter('${letter}')" id="btn-${letter}">${letter}</button>`
+    ).join("");
+
+    resetCanvas();
+    messageEl.textContent = "";
+    restartBtn.style.display = "none";
+    scoreEl.textContent = `Оноо: ${score}`;
+}
+
+function guessLetter(letter) {
+    if (guessedLetters.includes(letter)) return;
+
+    guessedLetters.push(letter);
+    const correct = selectedAnswer.includes(letter);
+
+    if (correct) {
+        selectedAnswer.split("").forEach((char, index) => {
+            if (char === letter) displayedWord[index] = char;
+        });
+
+        alert(`Зөв хариулт! Үсэг: ${letter}`);
+
+        if (!displayedWord.includes("_")) {
+            endGame(true);
+        }
+    } else {
+        lives--;
+        score--; 
+        drawHangman();
+        if (lives === 0) {
+            endGame(false);
+        }
+    }
+
+    updateDisplay();
+    document.getElementById(`btn-${letter}`).disabled = true;
+    scoreEl.textContent = `Оноо: ${score}`;
+}
+
+function updateDisplay() {
+    wordDisplayEl.textContent = displayedWord.join(" ");
+    questionEl.textContent = `Асуулт: ${selectedQuestion}`;
+}
+
+function resetCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawBase();
+    drawPole();
+    drawBeam();
+    drawRope();
+}
+
+function drawBase() {
+    ctx.beginPath();
+    ctx.moveTo(10, 290);
+    ctx.lineTo(190, 290);
+    ctx.stroke();
+}
+
+function drawPole() {
+    ctx.beginPath();
+    ctx.moveTo(50, 290);
+    ctx.lineTo(50, 50);
+    ctx.stroke();
+}
+
+function drawBeam() {
+    ctx.beginPath();
+    ctx.moveTo(50, 50);
+    ctx.lineTo(150, 50);
+    ctx.stroke();
+}
+
+function drawRope() {
+    ctx.beginPath();
+    ctx.moveTo(150, 50);
+    ctx.lineTo(150, 100);
+    ctx.stroke();
+}
+
+function drawHead() {
+    ctx.beginPath();
+    ctx.arc(150, 120, 20, 0, Math.PI * 2);
+    ctx.stroke();
+}
+
+function drawBody() {
+    ctx.beginPath();
+    ctx.moveTo(150, 140);
+    ctx.lineTo(150, 200);
+    ctx.stroke();
+}
+
+function drawLeftArm() {
+    ctx.beginPath();
+    ctx.moveTo(150, 160);
+    ctx.lineTo(130, 180);
+    ctx.stroke();
+}
+
+function drawRightArm() {
+    ctx.beginPath();
+    ctx.moveTo(150, 160);
+    ctx.lineTo(170, 180);
+    ctx.stroke();
+}
+
+function drawLeftLeg() {
+    ctx.beginPath();
+    ctx.moveTo(150, 200);
+    ctx.lineTo(130, 240);
+    ctx.stroke();
+}
+
+function drawRightLeg() {
+    ctx.beginPath();
+    ctx.moveTo(150, 200);
+    ctx.lineTo(170, 240);
+    ctx.stroke();
+}
+
+function drawHangman() {
+    if (lives === 4) drawHead();
+    if (lives === 3) drawBody();
+    if (lives === 2) drawLeftArm();
+    if (lives === 1) drawRightArm();
+    if (lives === 0) drawLeftLeg();
+}
+
+function endGame(win) {
+    messageEl.textContent = win
+        ? "winner"
+        : `Зөв хариулт: ${selectedAnswer}`;
+    alphabetEl.innerHTML = "";
+    restartBtn.style.display = "block";
+}
+
+restartBtn.addEventListener("click", startGame);
+
+startGame();
+
+
+    </script>
+</body>
+</html>

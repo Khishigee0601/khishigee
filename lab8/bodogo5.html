@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body >
+        <script>
+            var now = new Date();
+            var hour = now.getHours();
+
+            var n = prompt('Тоог оруулна:');
+            n = parseFloat(n); 
+            if (hour < 12) {
+                var kwadrat = Math.pow(n, 2); 
+                document.writeln(kwadrat );
+            } else {
+                var yazguur = Math.sqrt(n); 
+                document.writeln(yazguur);
+            }
+        </script>
+    </body>
+</html>     
