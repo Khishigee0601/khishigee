@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хамгийн бага ерөнхий хуваагдагч</title>
+</head>
+<body>
+    <p id="result"></p>
+
+    <script>
+        var numbers = [36, 60, 48, 120, 24];  
+        var ХБЕХ = 1; 
+        var olohtoo = false;
+
+        while (true) {
+            olohtoo = true;
+        
+            for (var i = 0; i < numbers.length; i++) {
+            
+                if (ХБЕХ % numbers[i] !== 0) {  
+                    olohtoo = false;  // huwaagdahgui bol found falce bolgono
+            
+                    break;  // toog 1r nemne
+                }
+            }
+
+            if (olohtoo) {
+                break;  
+            } else {
+    
+                ХБЕХ++;  
+            }
+        }
+        document.getElementById("result").innerText = "Хамгийн бага ерөнхий хуваагдагч: " + ХБЕХ;
+    </script>
+</body>
+</html>
