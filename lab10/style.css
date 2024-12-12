@@ -1,4 +1,4 @@
-/* Ерөнхий тохиргоо */
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -8,7 +8,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Header */
 .header {
     background: linear-gradient(90deg, #4CAF50, #43A047);
     text-align: center;
@@ -24,7 +23,6 @@ body {
     letter-spacing: 2px;
 }
 
-/* News List */
 .news-list {
     display: flex;
     flex-wrap: wrap;
@@ -64,7 +62,6 @@ body {
     text-decoration: underline;
 }
 
-/* Footer */
 .footer {
     background: #333;
     color: white;
