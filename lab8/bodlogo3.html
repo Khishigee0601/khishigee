@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-</head>
-<body>
-    <script>
-        var dawhar = 9; 
-        var dawhar_dahi_ail = 4;
-        var orts = 3;
-        var neg_ortsond_amidrdg_ail = dawhar * dawhar_dahi_ail; 
-        var niit_ail = orts * neg_ortsond_amidrdg_ail;
-        var ail = window.prompt("Тоот оруул:");
+    <head>
+        <meta charset="utf-8">
+        <title>E_4</title>
+    </head>
+    <body>
+        <script>
+        var n1 = prompt('Тоот оруулах (1-108 дотор): ');
+        var o = 0; // Орц
+        var d = 0; // Давхар
+        var h = 0; // Хаалга
 
+        if (n1 < 1 ) {
+            document.writeln(n1 + " тоот нь энд байхгүй байна.");
+        } else {
+            h = n1 % 4;
+            if (h == 0) {
+                h = 4; 
+            }
 
-        if (ail < 4 ) {
-            document.write("1-р орцны 1 давхар");
-        } 
-        else if (ail < 8) {
-            document.write("1-р орцны 2 давхар");
-        } 
-        else if (ail < 12) {
-            document.write("1-р орцны 3 давхар");
-        } 
-        else if (ail < 24) {
-            document.write("1-р орцны 4 давхар");
-        } 
-    </script>
-</body>
+            if (n1 <= 36) {
+                o = 1; 
+                d = Math.floor((n1 - 1) / 4) + 1; 
+            } else if (n1 <= 72) {
+                o = 2; 
+                d = Math.floor((n1 - 37) / 4) + 1; 
+            } else {
+                o = 3; 
+                d = Math.floor((n1 - 73) / 4) + 1; 
+            }
+
+            document.write(
+                n1 + " тоот нь " +o +
+                "-р орцны " +  d +
+                "-р давхарын " +
+                h +
+                " дэх хаалгад амьдардаг."
+            );
+        }
+        </script>
+    </body>
 </html>
