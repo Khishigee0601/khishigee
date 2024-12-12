@@ -1,16 +1,33 @@
 <!DOCTYPE html>
+<html>
 <head>
+    <title>Hello world</title>
 </head>
 <body>
 <script>
     var x;
-    x=window.prompt("too oruul:" );
-   var y=parseInt(x);
-   var S = 0;
-   while(y>0){
-        S=S*10+y % 10;
-        y = Math.floor(y /10); }
-    document.write("hariu: "+ S);
-    </script>
+    x = window.prompt("Тоо оруул:");
+    var y = parseInt(x);  
+    var S = 0;
+    
+    while (y > 0) {
+        S = S + y % 10; 
+        y = Math.floor(y / 10);  
+    }
+
+    document.write("Цифрүүдийн нийлбэр: " + S + "<br>"); 
+    var x = S;
+    var y = 0;
+    while (y > 0) {
+        y = y * 10 + x % 10;  
+        y = Math.floor(S / 10);  
+    }
+
+    if (original === y) {
+        document.write('Цифрүүдийн нийлбэр палиндром юм.');
+    } else {
+        document.write('Цифрүүдийн нийлбэр палиндром биш юм.');
+    }
+</script>
 </body> 
-</html>       
+</html>

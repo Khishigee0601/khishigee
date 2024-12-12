@@ -13,7 +13,7 @@
     <script>
     
         const xhr = new XMLHttpRequest();
-        xhr.open("GET", "news.xml"); 
+        xhr.open("GET", "./news.xml"); 
         xhr.onload = function () {
             if (xhr.status === 200) {
                 const parser = new DOMParser();
