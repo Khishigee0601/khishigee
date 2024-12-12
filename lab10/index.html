@@ -7,13 +7,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Мэдээнүүдийн жагсаалт</h1>
-    <div id="news-list"></div> 
+    <header class="header">
+        <h1>📰 Мэдээнүүдийн жагсаалт</h1>
+    </header>
+    <main>
+        <section id="news-list" class="news-list"></section>
+    </main>
+    <footer class="footer">
+        <p>© 2024 Мэдээнүүдийн вэб сайт. Бүх эрх хуулиар хамгаалагдсан.</p>
+    </footer>
 
     <script>
-    
         const xhr = new XMLHttpRequest();
-        xhr.open("GET", "./news.xml"); 
+        xhr.open("GET", "./news.xml");
         xhr.onload = function () {
             if (xhr.status === 200) {
                 const parser = new DOMParser();
@@ -24,23 +30,17 @@
 
                 for (let i = 0; i < items.length; i++) {
                     const title = items[i].getElementsByTagName("title")[0].textContent;
-                    const description = items[i].getElementsByTagName("description")[0].textContent;
 
-                   
-                    const newsItem = document.createElement("div");
-                    newsItem.classList.add("news");
+                    const newsCard = document.createElement("div");
+                    newsCard.classList.add("news-card");
 
                     const titleElement = document.createElement("a");
+                    titleElement.href = `medee.html?id=${i}`;
                     titleElement.textContent = title;
+                    titleElement.classList.add("news-title");
 
-                  
-                    const descriptionElement = document.createElement("p");
-                    descriptionElement.innerHTML = description; 
-                    
-                    newsItem.appendChild(titleElement);
-                    newsItem.appendChild(descriptionElement);
-
-                    newsListDiv.appendChild(newsItem);
+                    newsCard.appendChild(titleElement);
+                    newsListDiv.appendChild(newsCard);
                 }
             } else {
                 console.error("RSS татахад алдаа гарлаа.");

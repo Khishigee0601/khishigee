@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мэдээний дэлгэрэнгүй</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>📰 Мэдээний дэлгэрэнгүй</h1>
+    </header>
+    <main class="news-detail-container">
+        <article id="news-detail" class="news-detail">
+            <h2 id="news-title" class="news-title"></h2>
+            <p id="news-description" class="news-description"></p>
+        </article>
+        <div class="back-button">
+            <a href="index.html">← Буцах</a>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>© 2024 Мэдээнүүдийн вэб сайт. Бүх эрх хуулиар хамгаалагдсан.</p>
+    </footer>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const newsId = urlParams.get("id");
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "./news.xml");
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xhr.responseText, "text/xml");
+
+                const items = xmlDoc.getElementsByTagName("item");
+                const selectedItem = items[newsId];
+
+                if (selectedItem) {
+                    const title = selectedItem.getElementsByTagName("title")[0].textContent;
+                    const description = selectedItem.getElementsByTagName("description")[0].textContent;
+
+                    document.getElementById("news-title").textContent = title;
+                    document.getElementById("news-description").innerHTML = description;
+                } else {
+                    document.getElementById("news-detail").innerHTML = "<p>Мэдээ олдсонгүй.</p>";
+                }
+            } else {
+                console.error("RSS татахад алдаа гарлаа.");
+            }
+        };
+
+        xhr.onerror = function () {
+            console.error("Хүсэлт илгээхэд алдаа гарлаа.");
+        };
+
+        xhr.send();
+    </script>
+</body>
+</html>
