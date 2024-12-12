@@ -3,26 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мэдээний сайт</title>
+    <title>Мэдээнүүдийн жагсаалт</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>Мэдээнүүдийн жагсаалт</h1>
+    <div id="news-list"></div> 
+
     <script>
+    
         const xhr = new XMLHttpRequest();
-        xhr.open("GET", "news.xml");
+        xhr.open("GET", "news.xml"); 
         xhr.onload = function () {
             if (xhr.status === 200) {
                 const parser = new DOMParser();
                 const xmlDoc = parser.parseFromString(xhr.responseText, "text/xml");
-               console.log(xmlDoc);
+
+                const items = xmlDoc.getElementsByTagName("item");
+                const newsListDiv = document.getElementById("news-list");
+
+                for (let i = 0; i < items.length; i++) {
+                    const title = items[i].getElementsByTagName("title")[0].textContent;
+                    const description = items[i].getElementsByTagName("description")[0].textContent;
+
+                   
+                    const newsItem = document.createElement("div");
+                    newsItem.classList.add("news");
+
+                    const titleElement = document.createElement("a");
+                    titleElement.textContent = title;
+
+                  
+                    const descriptionElement = document.createElement("p");
+                    descriptionElement.innerHTML = description; 
+                    
+                    newsItem.appendChild(titleElement);
+                    newsItem.appendChild(descriptionElement);
+
+                    newsListDiv.appendChild(newsItem);
+                }
             } else {
-                console.error("RSS татахад алдаа гарлаа."); // herwee ogogdol amjilttai irbel console deer ogogdliig hewlene
+                console.error("RSS татахад алдаа гарлаа.");
             }
         };
-        xhr.onerror = function () {
-            console.error("Хүсэлт илгээхэд алдаа гарлаа."); //ogogdliig awahad aldaa garwal console deer ug string hewlegdene
-        };
-        xhr.send();
 
+        xhr.onerror = function () {
+            console.error("Хүсэлт илгээхэд алдаа гарлаа.");
+        };
+
+        xhr.send();
     </script>
 </body>
 </html>
