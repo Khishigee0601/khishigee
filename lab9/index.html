@@ -52,7 +52,7 @@
 
             lives = maxLives;
             guessedLetters = []; 
-            displayedWord = "_".repeat(selectedAnswer.length).split(""); 
+            displayedWord = "_".repeat(selectedAnswer.length).split(""); //heden usegtei bh
             score = 5; 
 
             updateDisplay();
@@ -68,10 +68,10 @@
 
     
         function guessLetter(useg) {
-            if (guessedLetters.includes(useg)) return; 
+            if (guessedLetters.includes(useg)) return; //useg garj irsen bol ahij garj irehgui
 
             guessedLetters.push(useg);
-            const correct = selectedAnswer.includes(useg); 
+            const correct = selectedAnswer.includes(useg); //ugend darsan useg baigaa esehiig shalgah
 
             if (correct) {
                 selectedAnswer.split("").forEach((char, index) => {
