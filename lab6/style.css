@@ -10,21 +10,38 @@ body {
 }
 
 .header {
-    padding: 20px;
+    width: 100%;
+    padding: 10px 0;
 }
-
-nav {
+.navbar {
     display: flex;
-    gap: 1cm;
-    flex-wrap: wrap;  
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0 50px; 
+    flex-wrap: wrap;
 }
 
-.contact i {
-    margin-right: 10px;
+.navbar a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+    margin: 0 10px; 
 }
+
+.icon {
+    font-size: 1.2rem;
+    color: #000;
+}
+
+
+.navbar a:hover {
+    color: #aaa;
+    transition: 0.3s;
+}
+
 
 .name {
-    font-size: 5mm;
+    font-size: 3ch;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
     flex-grow: 1;
@@ -78,8 +95,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     font-family: "Calibri", sans-serif;
-    flex-wrap: wrap; /* Дэлгэц жижиг байвал элементүүдийг дараагийн мөрөнд шилжүүлнэ */
-}
+    flex-wrap: wrap; }
 
 .timetable {
     margin-right: 9cm;
@@ -110,6 +126,8 @@ h1 {
     margin: 0 auto;
     width: 220px;
     height: 220px;
+    max-width: 100%;
+    height: auto;
 }
 
 .photo div {
@@ -135,6 +153,8 @@ h1 {
     margin: 0 auto;
     width: 500px;
     height: 630px;
+    max-width: 100%;
+    height: auto;
 }
 
 .picture div {
@@ -193,60 +213,18 @@ h1 {
     background-color: #4CE4D9;
     padding: 4px;
 }
+@media only screen and (min-width:481px)and (min-width:768px){
+    #slider-image {max-width: 100%;}
+    #flash-ad {display: none;}
+    }
+@media only screen and (min-width:769px){
+        #slider-image {max-width: 100%;}
+        #flash-ad {display:none;}
+        }     
 
-@media screen and (max-width: 768px) {
-    .Choice {
-        gap: 30px; 
-    }
-    .Choice a {
-        font-size: 14px;
-    }
-    .text {
-        font-size: 16px;
-    }
-    .photo img {
-        width: 150px;
-        height: 150px;
-    }
-    .picture img {
-        width: 100%;
-        height: auto;
-    }
-    .timetable, .Contact {
-        margin: 0;
-        padding: 0;
-    }
-    .Assist h1 {
-        font-size: 24px; /* Дэлгэц жижигрэх тусам гарчигын хэмжээ багасна */
-    }
-    .photo {
-        flex-direction: column;
-    }
-    .photo img {
-        width: 100px;
-        height: 100px;
-    }
-    .Vieww {
-        margin-top: 20px;
-    }
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+.content-leftside, .content-rightside {
+flex: 1 1 100%; 
+margin: 0; 
 }
-
-@media screen and (max-width: 480px) {
-    .Choice a {
-        font-size: 12px; /* Хэрэв дэлгэц 480px-ээс бага бол дэлгэцийн хамгийн жижиг хэмжээний текст */
-    }
-    .text {
-        font-size: 14px;
-    }
-    .photo img {
-        width: 100px;
-        height: 100px;
-    }
-    .Assist h1 {
-        font-size: 20px;
-    }
-    .picture img {
-        width: 100%;
-        height: auto;
-    }
 }
