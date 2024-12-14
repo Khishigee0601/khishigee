@@ -1,5 +1,5 @@
 body {
-        font-family:  Calibri, 'Trebuchet MS', sans-serif;
+        font-family:  'Times New Roman', Times, serif;
         line-height: 1.6;
     }
 
@@ -16,7 +16,7 @@ body {
 nav {
     display: flex;
     gap: 1cm;
-    flex-wrap: wrap;  /* Хэрэв зай дутагдвал элементүүдийг дараагийн мөрөнд шилжүүлнэ */
+    flex-wrap: wrap;  
 }
 
 .contact i {
@@ -24,11 +24,14 @@ nav {
 }
 
 .name {
-    font-size: 8mm;
+    font-size: 5mm;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
     flex-grow: 1;
-    gap: 1cm;
+ 
+}
+h1 {
+    font-weight: normal;
 }
 
 .calendar i {
@@ -40,7 +43,7 @@ nav {
     justify-content: center;
     gap: 70px;
     font-family: 'Calibri';
-    flex-wrap: wrap; /* Хэрэв зай дутагдвал линкүүдийг дараагийн мөрөнд шилжүүлнэ */
+    flex-wrap: wrap; 
     text-align: center;
 }
 
@@ -86,11 +89,7 @@ nav {
     margin-left: 7cm;
 }
 
-.Assist h1 {
-    text-align: center;
-    font-size: 30px;
-}
-.Assist h3 {
+.Assist h4 {
     text-align: center;
     font-size: 30px;
 }
@@ -103,7 +102,7 @@ nav {
     gap: 10px;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap; /* Хэрэв зай дутагдвал зурагнуудаа дараагийн мөрөнд шилжүүлнэ */
+    flex-wrap: wrap;
 }
 
 .photo img {
@@ -162,6 +161,10 @@ nav {
     background-color: #4CE4D9;
     padding: 1px 5px;
 }
+.Questions h5 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
 
 .zuraas1 {
     background-color: rgb(48, 47, 47);
@@ -191,10 +194,9 @@ nav {
     padding: 4px;
 }
 
-/* Responsive дизайн */
 @media screen and (max-width: 768px) {
     .Choice {
-        gap: 30px; /* Бага дэлгэц дээр илүү ойр байх */
+        gap: 30px; 
     }
     .Choice a {
         font-size: 14px;
