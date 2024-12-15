@@ -1,6 +1,7 @@
 body {
         font-family:  'Times New Roman', Times, serif;
         line-height: 1.6;
+        margin: 0;
     }
 
 
@@ -11,7 +12,9 @@ body {
 
 .header {
     width: 100%;
+    flex-wrap: wrap;
     padding: 10px 0;
+    
 }
 .navbar {
     display: flex;
@@ -76,6 +79,8 @@ h1 {
 }
 
 .Image-text {
+    display: flex;
+    flex-wrap: wrap;
     position: relative;
     display: inline-block;
 }
@@ -213,18 +218,83 @@ h1 {
     background-color: #4CE4D9;
     padding: 4px;
 }
-@media only screen and (min-width:481px)and (min-width:768px){
-    #slider-image {max-width: 100%;}
-    #flash-ad {display: none;}
+@media (max-width: 768px) {
+    .header, .Choice {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;     
     }
-@media only screen and (min-width:769px){
-        #slider-image {max-width: 100%;}
-        #flash-ad {display:none;}
-        }     
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-.content-leftside, .content-rightside {
-flex: 1 1 100%; 
-margin: 0; 
+    .name {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        padding: 10px 20px;
+    }
+
+    .navbar a {
+        font-size: 0.9rem;
+        margin: 5px 0; 
+    }
+
+    .Image-text {
+        flex-direction: column; 
+    }
+
+    .text {
+        position: static; 
+        padding: 10px;
+    }
+
+    .Contact-time {
+        flex-direction: column; 
+        align-items: center; 
+
+    .Contact, .timetable {
+        margin: 0;
+    }
+
+    .photo {
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    .photo img {
+        width: 50%; 
+        height: auto;
+    }
+
+    .picture {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .picture img {
+        width: 100%;
+    }
+    @media (max-width: 480px) {
+        .navbar a {
+            font-size: 0.7rem;
+        }
+    
+        .name {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+    
+        .Contact-time, .Assist .photo {
+            flex-direction: column;
+            text-align: center; 
+        }
+    
+        .photo img {
+            max-width: 90%; 
+            height: auto;
+        }
+    }
+    
 }
 }
