@@ -15,11 +15,6 @@ function showCart(event) {
     updateCartDisplay();
 }
 
-
-function closeCart() {
-    document.getElementById("cart-display").style.display = "none";
-}
-
 function updateCartDisplay() {
     const cartItems = document.getElementById("cart-items");
     cartItems.innerHTML = ""; 
