@@ -10,7 +10,7 @@
     <div class="game">
         <h1>Hangman тоглоом</h1>
         <p id="question"></p> 
-        <div id="word-display"></div> <!-- g bichih -->
+        <div id="word-display"></div> 
         <canvas id="hangmanCanvas" width="200" height="300"></canvas> 
         <div id="alphabet"></div> 
         <p id="message"></p>
@@ -24,7 +24,7 @@
             { question: "Алтан ургийн хамгийн сүүлийн хаан", answer: "Лигдэн" }
         ];
 
-        const maxLives = 5; // ami
+        const maxLives = 5; 
         var selectedQuestion, selectedAnswer, lives, guessedLetters, displayedWord, score;
 
         const questionEl = document.getElementById("question");
@@ -52,7 +52,7 @@
 
             lives = maxLives;
             guessedLetters = []; 
-            displayedWord = "_".repeat(selectedAnswer.length).split(""); //heden usegtei bh
+            displayedWord = "_".repeat(selectedAnswer.length).split(""); 
             score = 5; 
 
             updateDisplay();
@@ -62,16 +62,16 @@
             ).join(""); 
 
             resetHangmanCanvas(); 
-            restartBtn.style.display = "none"; // Эхлэх товчийг нуух
-            scoreEl.textContent = `Оноо: ${score}`; // Оноог харуулах
+            restartBtn.style.display = "none"; 
+            scoreEl.textContent = `Оноо: ${score}`; 
         }
 
     
         function guessLetter(useg) {
-            if (guessedLetters.includes(useg)) return; //useg garj irsen bol ahij garj irehgui
+            if (guessedLetters.includes(useg)) return; 
 
             guessedLetters.push(useg);
-            const correct = selectedAnswer.includes(useg); //ugend darsan useg baigaa esehiig shalgah
+            const correct = selectedAnswer.includes(useg); 
 
             if (correct) {
                 selectedAnswer.split("").forEach((char, index) => {
@@ -96,7 +96,7 @@
         }
 
         function updateDisplay() {
-            wordDisplayEl.textContent = displayedWord.join(" "); //usgiin orondni haruulah
+            wordDisplayEl.textContent = displayedWord.join(" "); 
             questionEl.textContent = `Асуулт: ${selectedQuestion}`;
         }
 
