@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creativision Company</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+header .navbar {
+    background-color: rgb(132, 239, 255)/* Шар өнгө */
+}
+a.button {
+    background-color: transparent; /* Цагаан өнгийг арилгах */
+    padding: 10px 15px; /* Эсвэл таны хүссэн тохируулга */
+    text-decoration: none; /* Доогуур зураасыг арилгах */
+    color: inherit; /* Үгийн өнгийг залгамжлуулна */
+    margin-right: 20px;
+}
+
+.icon {
+    display: flex; /* Хэвтээ тэгшлэхэд тохиромжтой */
+    align-items: center; /* Дүрсийг босоо тэнхлэгт төвлөрүүлэх */
+    font-size: 20px; /* Сагсны дүрсний хэмжээ */
+    color: blue;
+}
+
+       
+body {
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;}
+.logo {
+    width: 50px; /* Логоны өргөн */
+    margin-right: 10px; /* Лого ба текстийн хооронд зай  */
+}
+
+.logo-container h1 {
+    font-size: 24px;
+    margin: 0;
+}
+.sub-header ul {
+    text-align: center; /* Элементүүдийг дэлгэцийн голд байрлуулах */
+    margin-bottom: 30px; /* Гарчиг болон бүтээгдэхүүний хооронд зай */
+    padding: 10px;
+}
+.sub-header li {
+    display: inline-block; /* Элементүүдийг нэг мөрөнд байрлуулах */
+    margin-right: 100px; /* Элементүүдийн хоорондох зай */
+    text-decoration: none; /* Доогуур зураасгүй */
+}
+.sub-header li a {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.sub-header a:hover {
+    color: #1a3d7c; /* Хулгана аваачихад өөрчлөгдөх өнгө */
+    text-decoration: underline;
+}
+
+.contact-section {
+            background-color: #f4f4f4;
+            padding: 50px;
+            max-width: 800px;
+            margin: 50px auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .contact-section form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-section label {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .contact-section input,
+        .contact-section textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .contact-section button {
+            padding: 15px;
+            background-color: #4267B2;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .contact-section button:hover {
+            background-color: #365899;
+        }
+    </style>
+    <header>
+        <div class="navbar">
+            <div class="logo-container">
+                <img src="logo.png" alt="Creativision Company" class="logo">
+                <h1>Creativision Company</h1>
+            </div>
+            <nav>
+                <ul>
+                    <a href="index.html" class="button">Home</a>
+                    <a href="products.html" class="button">Products</a>
+                    <a href="about.html" class="button">About</a>
+                    <a href="contact.html" class="button">Contact</a>
+                    <a href="#" class="icon" onclick="showCart(event)">
+                    <i class="fa-solid fa-cart-shopping"></i></a>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+</head>
+<div class="contact-section">
+    <h2>Холбоо барих</h2>
+    <form action="#" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+</div>
+
+</body>
+</html>
